@@ -1,0 +1,829 @@
+{
+  "id": "662:3028",
+  "name": "01 Login",
+  "type": "FRAME",
+  "size": [
+    390,
+    844
+  ],
+  "layout": {
+    "direction": "column",
+    "gap": 0
+  },
+  "sizing": {
+    "h": "FIXED",
+    "v": "FIXED"
+  },
+  "fills": [
+    "#181C2B"
+  ],
+  "children": [
+    {
+      "id": "662:3038",
+      "name": "Apresentação",
+      "type": "FRAME",
+      "size": [
+        390,
+        308
+      ],
+      "layout": {
+        "direction": "column",
+        "gap": 24,
+        "padding": [
+          70,
+          20,
+          28,
+          20
+        ]
+      },
+      "sizing": {
+        "h": "FILL",
+        "v": "HUG"
+      },
+      "children": [
+        {
+          "id": "662:3039",
+          "name": "Identificação municipal",
+          "type": "FRAME",
+          "size": [
+            199,
+            14
+          ],
+          "layout": {
+            "direction": "row",
+            "gap": 8,
+            "crossAlign": "CENTER"
+          },
+          "sizing": {
+            "h": "HUG",
+            "v": "HUG"
+          },
+          "children": [
+            {
+              "id": "662:3040",
+              "name": "Marcador",
+              "type": "RECTANGLE",
+              "size": [
+                20,
+                2
+              ],
+              "sizing": {
+                "h": "FIXED",
+                "v": "FIXED"
+              },
+              "fills": [
+                "#FBC117"
+              ]
+            },
+            {
+              "id": "662:3041",
+              "name": "Texto",
+              "type": "TEXT",
+              "size": [
+                171,
+                14
+              ],
+              "sizing": {
+                "h": "HUG",
+                "v": "HUG"
+              },
+              "fills": [
+                "#B5B6BE"
+              ],
+              "text": "REGISTRO • SP / VALE DO RIBEIRA",
+              "font": {
+                "family": "Outfit",
+                "weight": 400,
+                "size": 11,
+                "lineHeight": 14,
+                "letterSpacing": 0,
+                "align": "LEFT"
+              }
+            }
+          ]
+        },
+        {
+          "id": "662:3042",
+          "name": "Logotipo original Smart Traffic",
+          "type": "RECTANGLE",
+          "size": [
+            310,
+            90
+          ],
+          "sizing": {
+            "h": "FIXED",
+            "v": "FIXED"
+          },
+          "fills": [
+            "IMAGE"
+          ]
+        },
+        {
+          "id": "662:3043",
+          "name": "Texto",
+          "type": "TEXT",
+          "size": [
+            350,
+            58
+          ],
+          "sizing": {
+            "h": "FILL",
+            "v": "HUG"
+          },
+          "fills": [
+            "#EBEAEB"
+          ],
+          "text": "Monitoramento inteligente de tráfego",
+          "font": {
+            "family": "Outfit",
+            "weight": 400,
+            "size": 22,
+            "lineHeight": 29,
+            "letterSpacing": 0,
+            "align": "LEFT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "662:3044",
+      "name": "Credenciais",
+      "type": "FRAME",
+      "size": [
+        390,
+        403
+      ],
+      "layout": {
+        "direction": "column",
+        "gap": 16,
+        "padding": [
+          0,
+          20,
+          0,
+          20
+        ]
+      },
+      "sizing": {
+        "h": "FILL",
+        "v": "HUG"
+      },
+      "children": [
+        {
+          "id": "662:3045",
+          "name": "Input",
+          "type": "FRAME",
+          "size": [
+            350,
+            73
+          ],
+          "layout": {
+            "direction": "column",
+            "gap": 8
+          },
+          "sizing": {
+            "h": "FILL",
+            "v": "HUG"
+          },
+          "children": [
+            {
+              "id": "662:3046",
+              "name": "Texto",
+              "type": "TEXT",
+              "size": [
+                350,
+                17
+              ],
+              "sizing": {
+                "h": "FILL",
+                "v": "HUG"
+              },
+              "fills": [
+                "#EBEAEB"
+              ],
+              "text": "Nome",
+              "font": {
+                "family": "Outfit",
+                "weight": 500,
+                "size": 13,
+                "lineHeight": 17,
+                "letterSpacing": 0,
+                "align": "LEFT"
+              }
+            },
+            {
+              "id": "662:3047",
+              "name": "Campo",
+              "type": "FRAME",
+              "size": [
+                350,
+                48
+              ],
+              "layout": {
+                "direction": "row",
+                "gap": 8,
+                "padding": [
+                  0,
+                  12,
+                  0,
+                  12
+                ],
+                "crossAlign": "CENTER"
+              },
+              "sizing": {
+                "h": "FILL",
+                "v": "FIXED"
+              },
+              "fills": [
+                "#222635"
+              ],
+              "strokes": [
+                "#424653"
+              ],
+              "strokeWidth": 1,
+              "radius": 6,
+              "children": [
+                {
+                  "id": "662:3048",
+                  "name": "Texto",
+                  "type": "TEXT",
+                  "size": [
+                    326,
+                    19
+                  ],
+                  "sizing": {
+                    "h": "FILL",
+                    "v": "HUG"
+                  },
+                  "fills": [
+                    "#9295A2"
+                  ],
+                  "text": "Seu nome completo",
+                  "font": {
+                    "family": "Outfit",
+                    "weight": 400,
+                    "size": 15,
+                    "lineHeight": 20,
+                    "letterSpacing": 0,
+                    "align": "LEFT"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "662:3049",
+          "name": "Input",
+          "type": "FRAME",
+          "size": [
+            350,
+            73
+          ],
+          "layout": {
+            "direction": "column",
+            "gap": 8
+          },
+          "sizing": {
+            "h": "FILL",
+            "v": "HUG"
+          },
+          "children": [
+            {
+              "id": "662:3050",
+              "name": "Texto",
+              "type": "TEXT",
+              "size": [
+                350,
+                17
+              ],
+              "sizing": {
+                "h": "FILL",
+                "v": "HUG"
+              },
+              "fills": [
+                "#EBEAEB"
+              ],
+              "text": "Senha",
+              "font": {
+                "family": "Outfit",
+                "weight": 500,
+                "size": 13,
+                "lineHeight": 17,
+                "letterSpacing": 0,
+                "align": "LEFT"
+              }
+            },
+            {
+              "id": "662:3051",
+              "name": "Campo",
+              "type": "FRAME",
+              "size": [
+                350,
+                48
+              ],
+              "layout": {
+                "direction": "row",
+                "gap": 8,
+                "padding": [
+                  0,
+                  12,
+                  0,
+                  12
+                ],
+                "crossAlign": "CENTER"
+              },
+              "sizing": {
+                "h": "FILL",
+                "v": "FIXED"
+              },
+              "fills": [
+                "#222635"
+              ],
+              "strokes": [
+                "#424653"
+              ],
+              "strokeWidth": 1,
+              "radius": 6,
+              "children": [
+                {
+                  "id": "662:3052",
+                  "name": "Texto",
+                  "type": "TEXT",
+                  "size": [
+                    274,
+                    19
+                  ],
+                  "sizing": {
+                    "h": "FILL",
+                    "v": "HUG"
+                  },
+                  "fills": [
+                    "#9295A2"
+                  ],
+                  "text": "Digite sua senha",
+                  "font": {
+                    "family": "Outfit",
+                    "weight": 400,
+                    "size": 15,
+                    "lineHeight": 20,
+                    "letterSpacing": 0,
+                    "align": "LEFT"
+                  }
+                },
+                {
+                  "id": "662:3053",
+                  "name": "Ação do campo",
+                  "type": "FRAME",
+                  "size": [
+                    44,
+                    44
+                  ],
+                  "layout": {
+                    "direction": "row",
+                    "gap": 0,
+                    "mainAlign": "CENTER",
+                    "crossAlign": "CENTER"
+                  },
+                  "sizing": {
+                    "h": "FIXED",
+                    "v": "FIXED"
+                  },
+                  "children": [
+                    {
+                      "id": "662:3054",
+                      "name": "eye-off",
+                      "type": "FRAME",
+                      "size": [
+                        20,
+                        20
+                      ],
+                      "sizing": {
+                        "h": "FIXED",
+                        "v": "FIXED"
+                      },
+                      "children": [
+                        {
+                          "id": "662:3055",
+                          "name": "Vector",
+                          "type": "VECTOR",
+                          "size": [
+                            17,
+                            17
+                          ],
+                          "strokes": [
+                            "#B5B6BE"
+                          ],
+                          "strokeWidth": 1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "662:3056",
+          "name": "Input",
+          "type": "FRAME",
+          "size": [
+            350,
+            97
+          ],
+          "layout": {
+            "direction": "column",
+            "gap": 8
+          },
+          "sizing": {
+            "h": "FILL",
+            "v": "HUG"
+          },
+          "children": [
+            {
+              "id": "662:3057",
+              "name": "Texto",
+              "type": "TEXT",
+              "size": [
+                350,
+                17
+              ],
+              "sizing": {
+                "h": "FILL",
+                "v": "HUG"
+              },
+              "fills": [
+                "#EBEAEB"
+              ],
+              "text": "Número de matrícula",
+              "font": {
+                "family": "Outfit",
+                "weight": 500,
+                "size": 13,
+                "lineHeight": 17,
+                "letterSpacing": 0,
+                "align": "LEFT"
+              }
+            },
+            {
+              "id": "662:3058",
+              "name": "Campo",
+              "type": "FRAME",
+              "size": [
+                350,
+                48
+              ],
+              "layout": {
+                "direction": "row",
+                "gap": 8,
+                "padding": [
+                  0,
+                  12,
+                  0,
+                  12
+                ],
+                "crossAlign": "CENTER"
+              },
+              "sizing": {
+                "h": "FILL",
+                "v": "FIXED"
+              },
+              "fills": [
+                "#222635"
+              ],
+              "strokes": [
+                "#424653"
+              ],
+              "strokeWidth": 1,
+              "radius": 6,
+              "children": [
+                {
+                  "id": "662:3059",
+                  "name": "Texto",
+                  "type": "TEXT",
+                  "size": [
+                    326,
+                    19
+                  ],
+                  "sizing": {
+                    "h": "FILL",
+                    "v": "HUG"
+                  },
+                  "fills": [
+                    "#9295A2"
+                  ],
+                  "text": "Ex.: 2024-0817",
+                  "font": {
+                    "family": "Outfit",
+                    "weight": 400,
+                    "size": 15,
+                    "lineHeight": 20,
+                    "letterSpacing": 0,
+                    "align": "LEFT"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "662:3060",
+              "name": "Texto",
+              "type": "TEXT",
+              "size": [
+                350,
+                16
+              ],
+              "sizing": {
+                "h": "FILL",
+                "v": "HUG"
+              },
+              "fills": [
+                "#B5B6BE"
+              ],
+              "text": "Acesso restrito à equipe de operação.",
+              "font": {
+                "family": "Outfit",
+                "weight": 400,
+                "size": 12,
+                "lineHeight": 16,
+                "letterSpacing": 0,
+                "align": "LEFT"
+              }
+            }
+          ]
+        },
+        {
+          "id": "662:3061",
+          "name": "Botão/Primário",
+          "type": "FRAME",
+          "size": [
+            350,
+            48
+          ],
+          "layout": {
+            "direction": "row",
+            "gap": 8,
+            "mainAlign": "CENTER",
+            "crossAlign": "CENTER"
+          },
+          "sizing": {
+            "h": "FILL",
+            "v": "FIXED"
+          },
+          "fills": [
+            "#FBC117"
+          ],
+          "strokes": [
+            "#000000 @0"
+          ],
+          "strokeWidth": 1,
+          "radius": 6,
+          "children": [
+            {
+              "id": "662:3062",
+              "name": "arrow-right",
+              "type": "FRAME",
+              "size": [
+                18,
+                18
+              ],
+              "sizing": {
+                "h": "FIXED",
+                "v": "FIXED"
+              },
+              "children": [
+                {
+                  "id": "662:3063",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "size": [
+                    11,
+                    11
+                  ],
+                  "strokes": [
+                    "#181C2B"
+                  ],
+                  "strokeWidth": 1
+                }
+              ]
+            },
+            {
+              "id": "662:3064",
+              "name": "Rótulo",
+              "type": "TEXT",
+              "size": [
+                45,
+                19
+              ],
+              "sizing": {
+                "h": "HUG",
+                "v": "HUG"
+              },
+              "fills": [
+                "#181C2B"
+              ],
+              "text": "Entrar",
+              "font": {
+                "family": "Outfit",
+                "weight": 600,
+                "size": 15,
+                "lineHeight": 20,
+                "letterSpacing": 0,
+                "align": "LEFT"
+              }
+            }
+          ]
+        },
+        {
+          "id": "662:3065",
+          "name": "Botão/Texto",
+          "type": "FRAME",
+          "size": [
+            350,
+            48
+          ],
+          "layout": {
+            "direction": "row",
+            "gap": 8,
+            "mainAlign": "CENTER",
+            "crossAlign": "CENTER"
+          },
+          "sizing": {
+            "h": "FILL",
+            "v": "FIXED"
+          },
+          "fills": [
+            "#000000 @0"
+          ],
+          "strokes": [
+            "#000000 @0"
+          ],
+          "strokeWidth": 1,
+          "radius": 6,
+          "children": [
+            {
+              "id": "662:3066",
+              "name": "Rótulo",
+              "type": "TEXT",
+              "size": [
+                141,
+                19
+              ],
+              "sizing": {
+                "h": "HUG",
+                "v": "HUG"
+              },
+              "fills": [
+                "#FBC117"
+              ],
+              "text": "Esqueci minha senha",
+              "font": {
+                "family": "Outfit",
+                "weight": 600,
+                "size": 15,
+                "lineHeight": 20,
+                "letterSpacing": 0,
+                "align": "LEFT"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "662:3067",
+      "name": "Rodapé institucional",
+      "type": "FRAME",
+      "size": [
+        350,
+        44
+      ],
+      "layout": {
+        "direction": "column",
+        "gap": 16
+      },
+      "sizing": {
+        "h": "FIXED",
+        "v": "HUG"
+      },
+      "absolute": true,
+      "children": [
+        {
+          "id": "662:3068",
+          "name": "Ambiente protegido",
+          "type": "FRAME",
+          "size": [
+            176,
+            14
+          ],
+          "layout": {
+            "direction": "row",
+            "gap": 6,
+            "mainAlign": "CENTER"
+          },
+          "sizing": {
+            "h": "HUG",
+            "v": "HUG"
+          },
+          "children": [
+            {
+              "id": "662:3069",
+              "name": "shield-check",
+              "type": "FRAME",
+              "size": [
+                14,
+                14
+              ],
+              "sizing": {
+                "h": "FIXED",
+                "v": "FIXED"
+              },
+              "children": [
+                {
+                  "id": "662:3070",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "size": [
+                    9,
+                    12
+                  ],
+                  "strokes": [
+                    "#B5B6BE"
+                  ],
+                  "strokeWidth": 1
+                }
+              ]
+            },
+            {
+              "id": "662:3071",
+              "name": "Texto",
+              "type": "TEXT",
+              "size": [
+                156,
+                14
+              ],
+              "sizing": {
+                "h": "HUG",
+                "v": "HUG"
+              },
+              "fills": [
+                "#B5B6BE"
+              ],
+              "text": "SmarTraffic · Controle municipal",
+              "font": {
+                "family": "Outfit",
+                "weight": 400,
+                "size": 11,
+                "lineHeight": 14,
+                "letterSpacing": 0,
+                "align": "LEFT"
+              }
+            }
+          ]
+        },
+        {
+          "id": "662:3072",
+          "name": "Texto",
+          "type": "TEXT",
+          "size": [
+            350,
+            14
+          ],
+          "sizing": {
+            "h": "FILL",
+            "v": "HUG"
+          },
+          "fills": [
+            "#B5B6BE"
+          ],
+          "text": "Faculdade de Tecnologia do Estado de São Paulo — Fatec Registro",
+          "font": {
+            "family": "Outfit",
+            "weight": 400,
+            "size": 11,
+            "lineHeight": 14,
+            "letterSpacing": 0,
+            "align": "CENTER"
+          }
+        }
+      ]
+    },
+    {
+      "id": "662:3073",
+      "name": "Indicador de início",
+      "type": "RECTANGLE",
+      "size": [
+        124,
+        4
+      ],
+      "sizing": {
+        "h": "FIXED",
+        "v": "FIXED"
+      },
+      "absolute": true,
+      "fills": [
+        "#EBEAEB"
+      ],
+      "radius": 2
+    }
+  ]
+}
