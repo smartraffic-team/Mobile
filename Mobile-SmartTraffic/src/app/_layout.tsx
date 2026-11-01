@@ -4,6 +4,9 @@ import * as SplashScreen from 'expo-splash-screen';
 import { DarkTheme, Stack, ThemeProvider } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import {
+  Michroma_400Regular,
+} from '@expo-google-fonts/michroma';
+import {
   Outfit_400Regular,
   Outfit_500Medium,
   Outfit_600SemiBold,
@@ -16,6 +19,7 @@ SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const [fontsLoaded, fontError] = useFonts({
+    Michroma_400Regular,
     Outfit_400Regular,
     Outfit_500Medium,
     Outfit_600SemiBold,

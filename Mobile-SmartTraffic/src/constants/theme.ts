@@ -39,6 +39,7 @@ const dark = {
   background: '#181C2B', // marca (60%) — fundo das telas
   backgroundElement: '#222738', // cards, inputs, bottom sheet — estimado
   backgroundSelected: '#2A3043', // pressionado, desabilitado, chip inativo — estimado
+  overlay: 'rgba(10, 12, 19, 0.72)',
 
   // Bordas
   border: '#2E3447', // estimado
@@ -141,10 +142,12 @@ export const Fonts = {
 /** Escala tipográfica (tamanhos estimados a partir das imagens). */
 export const Type = {
   brand: { fontFamily: Fonts.brand, fontSize: 24, lineHeight: 32 },
+  brandSmall: { fontFamily: Fonts.brand, fontSize: 14, lineHeight: 20 },
   display: { fontFamily: Fonts.semibold, fontSize: 28, lineHeight: 34 }, // KPIs: 42/48, 18.420
   title: { fontFamily: Fonts.semibold, fontSize: 22, lineHeight: 28 }, // título de tela
   loginSubtitle: { fontFamily: Fonts.regular, fontSize: 22, lineHeight: 29 },
   heading: { fontFamily: Fonts.semibold, fontSize: 16, lineHeight: 22 }, // título de card/seção
+  cameraTitle: { fontFamily: Fonts.semibold, fontSize: 24, lineHeight: 30 },
   loginLabel: { fontFamily: Fonts.medium, fontSize: 13, lineHeight: 17 },
   input: { fontFamily: Fonts.regular, fontSize: 15, lineHeight: 20 },
   body: { fontFamily: Fonts.regular, fontSize: 14, lineHeight: 20 },
@@ -195,6 +198,10 @@ export const Sizes = {
   control: 48, // altura de botão e input — estimado
   loginLogoWidth: 310,
   loginLogoHeight: 90,
+  cameraMarker: 44,
+  mapAction: 48,
+  navigationBar: 76,
+  cameraPreview: 180,
   avatar: 48, // estimado
   icon: 20, // estimado
 } as const;
@@ -206,3 +213,7 @@ export const Sizes = {
 export const BottomTabInset = Platform.select({ ios: 50, android: 80 }) ?? 0;
 export const MaxContentWidth = 800;
 export const MaxAuthWidth = 480;
+export const MapCenter = {
+  latitude: -24.49012,
+  longitude: -47.84231,
+} as const;
