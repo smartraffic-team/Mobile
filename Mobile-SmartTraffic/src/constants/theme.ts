@@ -143,7 +143,10 @@ export const Type = {
   brand: { fontFamily: Fonts.brand, fontSize: 24, lineHeight: 32 },
   display: { fontFamily: Fonts.semibold, fontSize: 28, lineHeight: 34 }, // KPIs: 42/48, 18.420
   title: { fontFamily: Fonts.semibold, fontSize: 22, lineHeight: 28 }, // título de tela
+  loginSubtitle: { fontFamily: Fonts.regular, fontSize: 22, lineHeight: 29 },
   heading: { fontFamily: Fonts.semibold, fontSize: 16, lineHeight: 22 }, // título de card/seção
+  loginLabel: { fontFamily: Fonts.medium, fontSize: 13, lineHeight: 17 },
+  input: { fontFamily: Fonts.regular, fontSize: 15, lineHeight: 20 },
   body: { fontFamily: Fonts.regular, fontSize: 14, lineHeight: 20 },
   bodyStrong: { fontFamily: Fonts.medium, fontSize: 14, lineHeight: 20 },
   button: { fontFamily: Fonts.semibold, fontSize: 16, lineHeight: 20 },
@@ -190,6 +193,8 @@ export const BorderWidth = {
 export const Sizes = {
   minTouch: 44, // confirmado: toque >= 44 px (chips e alvos pequenos)
   control: 48, // altura de botão e input — estimado
+  loginLogoWidth: 310,
+  loginLogoHeight: 90,
   avatar: 48, // estimado
   icon: 20, // estimado
 } as const;
@@ -200,3 +205,4 @@ export const Sizes = {
 
 export const BottomTabInset = Platform.select({ ios: 50, android: 80 }) ?? 0;
 export const MaxContentWidth = 800;
+export const MaxAuthWidth = 480;
