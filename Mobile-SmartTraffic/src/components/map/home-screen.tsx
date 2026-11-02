@@ -119,13 +119,13 @@ export function HomeScreen() {
       return;
     }
 
-    if (tab !== 'map') {
-      const tabNames: Record<string, string> = {
-        tickets: 'Chamados',
-        dashboard: 'Dashboard',
-        profile: 'Perfil',
-      };
-      setToastMessage(`${tabNames[tab] ?? tab} estará disponível em uma próxima atualização.`);
+    if (tab === 'tickets') {
+      router.push('/tickets');
+      return;
+    }
+
+    if (tab === 'profile') {
+      setToastMessage('Perfil estará disponível em uma próxima atualização.');
     }
   }
 

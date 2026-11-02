@@ -33,6 +33,13 @@
           "imageWidth": 76
         }
       ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Permitir que o SmartTraffic selecione uma imagem para anexar ao chamado.",
+          "cameraPermission": false
+        }
+      ],
       "expo-sharing"
     ],
     "experiments": {

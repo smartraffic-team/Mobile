@@ -137,9 +137,13 @@ export function DashboardScreen() {
         return;
       }
 
+      if (tab === 'tickets') {
+        router.push('/tickets');
+        return;
+      }
+
       if (tab !== 'dashboard') {
-        const label = tab === 'tickets' ? 'Chamados' : 'Perfil';
-        setToastMessage(`${label} estará disponível em uma próxima atualização.`);
+        setToastMessage('Perfil estará disponível em uma próxima atualização.');
       }
     },
     [router],
