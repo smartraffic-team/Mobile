@@ -1,6 +1,7 @@
 import { Image } from 'expo-image';
+import { useRouter } from 'expo-router';
 import { SymbolView } from 'expo-symbols';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import {
   ActivityIndicator,
   Keyboard,
@@ -27,10 +28,10 @@ import {
   Spacing,
   Type,
 } from '@/constants/theme';
+import { authDataSource } from '@/services/auth';
 import type { LoginCredentials, LoginFieldErrors, LoginFieldName } from '@/services/contracts/auth';
 
 const REGISTRATION_NUMBER_PATTERN = /^\d{4}-\d{4}$/;
-const API_UNAVAILABLE_MESSAGE = 'A autenticação ainda não está disponível. Aguarde a integração com a API.';
 
 function formatRegistrationNumber(value: string) {
   const digits = value.replace(/\D/g, '').slice(0, 8);
@@ -55,6 +56,7 @@ function validateCredentials(credentials: LoginCredentials): LoginFieldErrors {
 }
 
 export function LoginScreen() {
+  const router = useRouter();
   const [credentials, setCredentials] = useState<LoginCredentials>({
     name: '',
     password: '',
@@ -68,16 +70,6 @@ export function LoginScreen() {
   const nameInput = useRef<TextInputInstance>(null);
   const passwordInput = useRef<TextInputInstance>(null);
   const registrationInput = useRef<TextInputInstance>(null);
-  const submissionTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  useEffect(
-    () => () => {
-      if (submissionTimer.current) {
-        clearTimeout(submissionTimer.current);
-      }
-    },
-    [],
-  );
 
   function updateCredential(field: LoginFieldName, value: string) {
     const updatedCredentials = { ...credentials, [field]: value };
@@ -92,7 +84,7 @@ export function LoginScreen() {
     }
   }
 
-  function handleSubmit() {
+  async function handleSubmit() {
     Keyboard.dismiss();
     setShowRecoveryMessage(false);
 
@@ -112,11 +104,16 @@ export function LoginScreen() {
     }
 
     setIsSubmitting(true);
-    submissionTimer.current = setTimeout(() => {
+    try {
+      await authDataSource.authenticate(credentials);
+      router.replace('/');
+    } catch (error: unknown) {
+      setSubmissionError(
+        error instanceof Error ? error.message : 'Não foi possível autenticar. Tente novamente.',
+      );
+    } finally {
       setIsSubmitting(false);
-      setSubmissionError(API_UNAVAILABLE_MESSAGE);
-      submissionTimer.current = null;
-    }, 650);
+    }
   }
 
   return (
@@ -129,10 +126,6 @@ export function LoginScreen() {
           keyboardShouldPersistTaps="handled">
           <View style={styles.content}>
             <View style={styles.presentation}>
-              <View style={styles.municipality}>
-                <View style={styles.marker} />
-                <Text style={styles.municipalityText}>REGISTRO • SP / VALE DO RIBEIRA</Text>
-              </View>
               <Image
                 accessibilityLabel="SmartTraffic"
                 contentFit="contain"
@@ -140,9 +133,6 @@ export function LoginScreen() {
                 style={styles.logo}
                 transition={180}
               />
-              <Text accessibilityRole="header" style={styles.subtitle}>
-                Monitoramento inteligente de tráfego
-              </Text>
             </View>
 
             <View style={styles.form}>
@@ -152,7 +142,7 @@ export function LoginScreen() {
                 error={errors.name}
                 editable={!isSubmitting}
                 label="Nome"
-                placeholder="Seu nome completo"
+                placeholder="Digite seu nome"
                 ref={nameInput}
                 returnKeyType="next"
                 textContentType="name"
@@ -199,7 +189,7 @@ export function LoginScreen() {
                 editable={!isSubmitting}
                 label="Número de matrícula"
                 maxLength={9}
-                placeholder="Ex.: 2024-0817"
+                placeholder="Ex.: 2026-0001"
                 ref={registrationInput}
                 returnKeyType="done"
                 textContentType="none"
@@ -271,24 +261,9 @@ export function LoginScreen() {
                 </Animated.View>
               ) : null}
             </View>
-
-            <View style={styles.footer}>
-              <View style={styles.footerBrand}>
-                <SymbolView
-                  name={{
-                    ios: 'checkmark.shield',
-                    android: 'verified_user',
-                    web: 'verified_user',
-                  }}
-                  size={Sizes.icon}
-                  tintColor={AppColors.textSecondary}
-                />
-                <Text style={styles.footerText}>SmarTraffic · Controle municipal</Text>
-              </View>
-              <Text style={styles.institutionText}>
-                Faculdade de Tecnologia do Estado de São Paulo — Fatec Registro
-              </Text>
-            </View>
+            <Text accessibilityLabel="Versão v0.1-mock" style={styles.version}>
+              v0.1-mock
+            </Text>
           </View>
         </ScrollView>
       </KeyboardAvoidingView>
@@ -307,41 +282,24 @@ const styles = StyleSheet.create({
   scrollContent: {
     flexGrow: 1,
     alignItems: 'center',
+    justifyContent: 'center',
   },
   content: {
     width: '100%',
     maxWidth: MaxAuthWidth,
     flexGrow: 1,
-    justifyContent: 'space-between',
+    justifyContent: 'center',
+    gap: Spacing.four,
     paddingHorizontal: Layout.screenMargin,
   },
   presentation: {
-    gap: Spacing.four,
-    paddingTop: Spacing.two,
-  },
-  municipality: {
-    flexDirection: 'row',
     alignItems: 'center',
-    gap: Spacing.two,
-  },
-  marker: {
-    width: Sizes.icon,
-    height: BorderWidth.focus,
-    backgroundColor: AppColors.primary,
-  },
-  municipalityText: {
-    ...Type.caption,
-    color: AppColors.textSecondary,
   },
   logo: {
     width: '100%',
     maxWidth: Sizes.loginLogoWidth,
     height: Sizes.loginLogoHeight,
     alignSelf: 'center',
-  },
-  subtitle: {
-    ...Type.loginSubtitle,
-    color: AppColors.text,
   },
   form: {
     gap: Spacing.three,
@@ -397,23 +355,9 @@ const styles = StyleSheet.create({
     color: AppColors.textSecondary,
     textAlign: 'center',
   },
-  footer: {
-    gap: Spacing.three,
-    paddingBottom: Spacing.two,
-  },
-  footerBrand: {
-    minHeight: Sizes.minTouch,
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: Spacing.two,
-  },
-  footerText: {
-    ...Type.body,
-    color: AppColors.textSecondary,
-  },
-  institutionText: {
-    ...Type.body,
-    color: AppColors.textSecondary,
+  version: {
+    ...Type.caption,
+    color: AppColors.textMuted,
     textAlign: 'center',
   },
 });

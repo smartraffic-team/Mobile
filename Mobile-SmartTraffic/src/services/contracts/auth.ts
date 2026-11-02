@@ -7,3 +7,11 @@ export type LoginCredentials = {
 export type LoginFieldName = keyof LoginCredentials;
 
 export type LoginFieldErrors = Partial<Record<LoginFieldName, string>>;
+
+export type LoginResult = {
+  userName: string;
+};
+
+export interface AuthDataSource {
+  authenticate(credentials: LoginCredentials): Promise<LoginResult>;
+}

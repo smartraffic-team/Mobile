@@ -3,7 +3,7 @@ import type { ProfileSnapshot } from '@/services/contracts/profile';
 export const demoProfile: ProfileSnapshot = {
   user: {
     id: 'user-2024-0817',
-    name: 'Mariana Costa',
+    name: 'User',
     role: 'Operadora de tráfego',
     roleLabel: 'Operador',
     employeeId: '2024-0817',
