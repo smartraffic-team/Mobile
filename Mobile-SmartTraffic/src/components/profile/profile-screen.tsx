@@ -263,7 +263,6 @@ export function ProfileScreen() {
                 style={({ pressed }) => [styles.signOutButton, pressed && styles.pressed]}>
                 <ProfileIcon name="logout" color={AppColors.error} />
                 <Text style={styles.signOutText}>Sair do SmartTraffic</Text>
-                <ProfileIcon name="activity" />
               </Pressable>
 
               <Text style={styles.demoNote}>
