@@ -14,6 +14,7 @@ import type { LeafletMapHandle, LeafletMapCommand } from '@/components/map/leafl
 import { MapControls } from '@/components/map/map-controls';
 import { MapStatusOverlay } from '@/components/map/map-status-overlay';
 import { MapTabBar } from '@/components/map/map-tab-bar';
+import type { MapTabKey } from '@/components/map/map-tab-bar';
 import {
   AppColors,
   Layout,
@@ -112,7 +113,12 @@ export function HomeScreen() {
     );
   }
 
-  function handleTabSelection(tab: string) {
+  function handleTabSelection(tab: MapTabKey) {
+    if (tab === 'dashboard') {
+      router.push('/dashboard');
+      return;
+    }
+
     if (tab !== 'map') {
       const tabNames: Record<string, string> = {
         tickets: 'Chamados',

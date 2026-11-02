@@ -17,17 +17,21 @@ const tabs = [
   { key: 'profile', label: 'Perfil', ios: 'person.crop.circle', android: 'account_circle' },
 ] as const;
 
+export type MapTabKey = (typeof tabs)[number]['key'];
+
 export function MapTabBar({
   bottomInset,
   onSelectTab,
+  selectedTab = 'map',
 }: {
   bottomInset: number;
-  onSelectTab: (tab: string) => void;
+  onSelectTab: (tab: MapTabKey) => void;
+  selectedTab?: MapTabKey;
 }) {
   return (
     <View style={[styles.bar, { paddingBottom: bottomInset }]}>
       {tabs.map((tab) => {
-        const isSelected = tab.key === 'map';
+        const isSelected = tab.key === selectedTab;
         const color = isSelected ? AppColors.primary : AppColors.textSecondary;
 
         return (
