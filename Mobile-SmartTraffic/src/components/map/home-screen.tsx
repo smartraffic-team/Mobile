@@ -125,7 +125,7 @@ export function HomeScreen() {
     }
 
     if (tab === 'profile') {
-      setToastMessage('Perfil estará disponível em uma próxima atualização.');
+      router.push('/profile');
     }
   }
 

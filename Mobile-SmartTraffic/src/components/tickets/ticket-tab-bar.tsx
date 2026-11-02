@@ -29,7 +29,7 @@ export function TicketTabBar({
     } else if (tab === 'tickets') {
       router.replace('/tickets');
     } else {
-      setNotice(true);
+      router.replace('/profile');
     }
   }
 

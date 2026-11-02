@@ -143,7 +143,7 @@ export function DashboardScreen() {
       }
 
       if (tab !== 'dashboard') {
-        setToastMessage('Perfil estará disponível em uma próxima atualização.');
+        router.push('/profile');
       }
     },
     [router],
