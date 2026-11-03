@@ -190,7 +190,7 @@ export function TicketActionButton({
   label: string;
   onPress?: () => void;
   icon?: keyof typeof actionIcons;
-  variant?: 'primary' | 'outline';
+  variant?: 'primary' | 'outline' | 'danger';
   disabled?: boolean;
 }) {
   return (
@@ -202,6 +202,7 @@ export function TicketActionButton({
       style={({ pressed }) => [
         styles.actionButton,
         variant === 'outline' && styles.actionButtonOutline,
+        variant === 'danger' && styles.actionButtonDanger,
         pressed && !disabled && styles.pressed,
         disabled && styles.disabled,
       ]}>
@@ -209,7 +210,7 @@ export function TicketActionButton({
         <SymbolView
           name={actionIcons[icon]}
           size={Sizes.icon + Spacing.two}
-          tintColor={variant === 'primary' ? AppColors.onPrimary : AppColors.primary}
+          tintColor={variant === 'outline' ? AppColors.primary : AppColors.onPrimary}
         />
       ) : null}
       <Text style={[styles.actionButtonText, variant === 'outline' && styles.actionButtonOutlineText]}>
@@ -416,6 +417,10 @@ const styles = StyleSheet.create({
   actionButtonOutline: {
     borderWidth: BorderWidth.focus,
     borderColor: AppColors.primary,
+  },
+  actionButtonDanger: {
+    backgroundColor: AppColors.error,
+    borderColor: AppColors.error,
   },
   actionButtonText: {
     ...Type.button,

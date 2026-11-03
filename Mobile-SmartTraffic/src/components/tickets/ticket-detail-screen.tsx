@@ -207,7 +207,7 @@ export function TicketDetailScreen() {
                   <View style={styles.actionColumn}>
                     <TicketActionButton
                       label="Cancelar chamado"
-                      variant="outline"
+                      variant="danger"
                       onPress={() => setConfirmation('cancelled')}
                     />
                   </View>
