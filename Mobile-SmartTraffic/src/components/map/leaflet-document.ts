@@ -146,7 +146,18 @@ html, body, #map { width: 100%; height: 100%; margin: 0; padding: 0; overflow: h
     else if(command.type==='recenter'){map.flyTo(center,16,{duration:0.45})}
     else if(command.type==='focus-camera'){
       var marker=cameraMarkers[command.cameraId];
-      if(marker){marker.fire('click')}
+      if(marker){
+        map.flyTo(marker.getLatLng(),17,{duration:0.45});
+        selectedCameraId=command.cameraId;
+        Object.keys(cameraMarkers).forEach(function(id){
+          var cameraMarker=cameraMarkers[id];
+          cameraMarker.setIcon(iconFor(cameraMarker.smartTrafficCamera));
+          cameraMarker.closeTooltip();
+          if(id===selectedCameraId){
+            showTooltip(cameraMarker,id);
+          }
+        });
+      }
     }else if(command.type==='select-camera'){
       selectedCameraId=command.cameraId||null;
       Object.keys(cameraMarkers).forEach(function(id){

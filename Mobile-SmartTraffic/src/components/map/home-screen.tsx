@@ -95,10 +95,11 @@ export function HomeScreen() {
       }
 
       setSelectedCameraId(camera.id);
-      setOpenCamera(camera);
+      setOpenCamera(null);
       setQuery('');
+      router.push({ pathname: '/camera/[id]', params: { id: camera.id } });
     },
-    [],
+    [router],
   );
 
   const retryMap = useCallback(() => {
@@ -225,9 +226,10 @@ export function HomeScreen() {
             setOpenCamera(null);
             sendMapCommand({ type: 'select-camera', cameraId: selectedCameraId });
           }}
-          onViewLive={() =>
-            router.push({ pathname: '/camera/[id]', params: { id: openCamera.id } })
-          }
+          onViewLive={() => {
+            setOpenCamera(null);
+            router.push({ pathname: '/camera/[id]', params: { id: openCamera.id } });
+          }}
         />
       ) : null}
 
